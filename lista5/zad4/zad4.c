@@ -32,8 +32,10 @@ double multiply() {
     begin = clock();
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++)
-            for (int k = 0; k < size; k++)
-                mc[i][j] = ma[i][k] + mb[k][j];
+            for (int k = 0; k < size; k++) {
+                mc[i][j] += ma[i][k] * mb[k][j];
+            }
+
     end = clock();
     return (double)(end - begin)/CLOCKS_PER_SEC;
 }
@@ -50,25 +52,6 @@ double multiply_with_transponse() {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             for (int k = 0; k < size; k++) {
-                mc[i][j] = ma[i][k] + temp[j][k];
-            }
-        }
-    }
-    end = clock();
-    return (double) (end - begin) / CLOCKS_PER_SEC;
-}
-
-
-double multiply_cache() {
-    begin = clock();
-    for (int i=0; i<size; i++) {
-        for (int j = 0; j < size; j++) {
-            temp[i][j] = mb[j][i];
-        }
-    }
-    for (int i=0; i<size; i++) {
-        for (int j = 0; j < size; j++) {
-            for (int k = 0; k < size; k++) {
                 mc[i][j] += ma[i][k] * temp[j][k];
             }
         }
@@ -78,27 +61,9 @@ double multiply_cache() {
 }
 
 void print() {
-    for (int i=0; i<5; i++) {
-        for (int j = 0; j < 5; j++) {
+    for (int i=0; i<size; i++) {
+        for (int j = 0; j < size; j++) {
             printf(" %d ", mc[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-void printa() {
-    for (int i=0; i<5; i++) {
-        for (int j = 0; j < 5; j++) {
-            printf(" %d ", ma[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-void printb() {
-    for (int i=0; i<5; i++) {
-        for (int j = 0; j < 5; j++) {
-            printf(" %d ", mb[i][j]);
         }
         printf("\n");
     }
@@ -124,19 +89,9 @@ int main(int argc, char** argv)
     createMatrixes();
     reset_result_matrix();
     printf("normal multiply: %fs\n", multiply());
-    //print();
-    //printa();
-    //printb();
     reset_result_matrix();
     printf("multiply with transponse: %fs\n", multiply_with_transponse());
-    //print();
-    //printa();
-    //printb();
-    reset_result_matrix();
-    printf("multiply cache: %fs\n", multiply_cache());
-    //print();
-    //printa();
-    //printb();
 
     return 0;
 }
+

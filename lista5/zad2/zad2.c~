@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
         }
     }
 
-	printf("timer: %fs\n", s);
+	printf("timer: %d\n", s);
     //print_matrixes();
 }
 
