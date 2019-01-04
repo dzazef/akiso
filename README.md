@@ -26,7 +26,7 @@ Programy sprawdzające działania polecenia kill oraz sygnałów.
 ### Zad 3.
 Prosta wersja powłoki **lsh**.
 
-## Lista 5
+## Lista 5.
 ### Zad 1.
 Własna implementacja funkcji **printf** oraz **scanf**.
 Aby skompilować program przy użyciu gcc należy mieć zainstalowaną bibliotekę gcc-multilib.  
@@ -53,3 +53,12 @@ Po uruchomieniu widzimy listę dostępnych użytkowników, ustawiamy swój nick 
 Program mnożący dwukrotnie dwie macierze o dowolnym rozmiarze n, 
 w tradycyjny sposób oraz robiąc wcześniej transpozycję macierzy.
 Podczas uruchamiania program przyjmuje jako parametr bok macierzy.
+
+## Lista 6.
+### Zad 2.
+Program wyświetlający liczby pierwsze w zakresie od 1 do 1000.
+Kompilacja przy użyciu polecenia:
+```
+nasm -f elf32 zad2.asm -o zad2.o
+gcc -m32 zad2.o -o zad2
+```
