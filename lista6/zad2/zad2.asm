@@ -13,12 +13,12 @@ section .text
 main:
   mov ebx,1
   
-start:					;pętla od 2 do 1000
+start:				;pętla od 2 do 1000
   cmp ebx,1000
-  je end				;jeśli 1000 zakończ program
+  je end			;jeśli 1000 zakończ program
   inc ebx
     
-  prime:				;sprawdzenie czy liczba pierwsza
+  prime:			;sprawdzenie czy liczba pierwsza
     mov ecx,1			;dzielnik
 
     check:
