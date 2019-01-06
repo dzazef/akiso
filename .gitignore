@@ -2,3 +2,7 @@
 .out
 # Other
 .c~
+.out~
+.asm~
+.obx
+.obx~
