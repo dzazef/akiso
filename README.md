@@ -55,8 +55,17 @@ w tradycyjny sposób oraz robiąc wcześniej transpozycję macierzy.
 Podczas uruchamiania program przyjmuje jako parametr bok macierzy.
 
 ## Lista 6.
+### Zad 1.
+Program zamieniający liczbę 8-bitową na system szesnastkowy w assemblerze dla 6502.
 ### Zad 2.
 Program wyświetlający liczby pierwsze w zakresie od 1 do 1000.
+Kompilacja przy użyciu polecenia:
+```
+nasm -f elf32 zad2.asm -o zad2.o
+gcc -m32 zad2.o -o zad2
+```
+### Zad 3.
+Prosty kalkulator w x86.
 Kompilacja przy użyciu polecenia:
 ```
 nasm -f elf32 zad2.asm -o zad2.o
