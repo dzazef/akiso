@@ -27,7 +27,8 @@ main:
   f2xm1					;st(1) = INT[x*log2(e)] | st(0) = 2^(x*log2(e)-INT[x*log2(e)])-1
   fld1					;st(2) = INT[x*log2(e)] | st(1) = 2^(x*log2(e)-INT[x*log2(e)])-1 | st(0) = 1
   faddp					;st(1) = INT[x*log2(e)] | st(0) = 2^(x*log2(e)-INT[x*log2(e)])
-  fscale				;st(0) = 2^(x*log2(e))
+  fscale				;st(1) = INT[x*log2(e)] | st(0) = 2^(x*log2(e))
+  fstp st1				;st(0) = 2^(x*log2(e))
   fld1					;st(1) = 2^(x*log2(e)) | st(0) = 1
   fld1					;st(2) = 2^(x*log2(e)) | st(1) = 1 | st(0) = 1
   faddp					;st(1) = 2^(x*log2(e)) | st(0) = 2
@@ -48,9 +49,8 @@ main:
   fld1					;st(4) = 2^(x*log2(e))/2 | st(3) = INT[-x*log2(e)] | st(2) = 2^(-x*log2(e)) | st(1) = 1 | st(0) = 1
   faddp					;st(3) = 2^(x*log2(e))/2 | st(2) = INT[-x*log2(e)] | st(1) = 2^(-x*log2(e)) | st(0) = 2
   fdivp					;st(2) = 2^(x*log2(e))/2 | st(1) = INT[-x*log2(e)] | st(0) = 2^(-x*log2(e))/2
-  fsubr	st2,st0			;st(2) = 2^(-x*log2(e))/2 - 2^(x*log2(e))/2 | st(1) = INT[-x*log2(e)] | st(0) = 2^(-x*log2(e))/2
-  fxch st2				;st(2) = 2^(-x*log2(e))/2 | st(1) = INT[-x*log2(e)] | st(0) = 2^(-x*log2(e))/2 - 2^(x*log2(e))/2
-  fchs					;st(0) = 2^(x*log2(e))/2 - 2^(-x*log2(e))/2
+  fstp st1				;st(1) = 2^(x*log2(e))/2 | st(0) = 2^(-x*log2(e))/2
+  fsubp					;st(0) = 2^(-x*log2(e))/2 - 2^(x*log2(e))/2
   
 printresult:
   fst qword [inp]
