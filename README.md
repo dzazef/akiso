@@ -38,7 +38,7 @@ gcc -m32 -fno-stack-protector zad1.c
 Wielowątkowa wersja mnożenia macierzy boolowskich.  
 Kompilacja przy użyciu polecenia  
 ```
-gcc -lpthread zad2.c
+gcc -pthread zad2.c
 ```
 Podczas uruchamiania program przyjmuje jako pierwszy parametr bok macierzy, a jako drugi liczbę wątków.  
 ### Zad 3.
