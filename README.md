@@ -65,9 +65,28 @@ nasm -f elf32 zad2.asm -o zad2.o
 gcc -m32 zad2.o -o zad2
 ```
 ### Zad 3.
-Prosty kalkulator w x86.
+Prosty kalkulator w assemblerze x86.
 Kompilacja przy użyciu polecenia:
 ```
-nasm -f elf32 zad2.asm -o zad2.o
-gcc -m32 zad2.o -o zad2
+nasm -f elf32 zad3.asm -o zad3.o
+gcc -m32 zad3.o -o zad3
+```
+### Zad 4.
+Program liczący silnię w assemblerze x86 przy użyciu komend SSE2.
+```
+nasm -f elf32 zad4.asm -o zad4.o
+gcc -m32 zad4.o -o zad4
+```
+### Zad 8.
+#### 1.
+Program liczący sinus hiperboliczny w assemblerze x86.
+```
+nasm -f elf32 zad8_1.asm -o zad8_1.o
+gcc -m32 zad8_1.o -o zad8_1
+```
+#### 2.
+Program liczący area sinus hiperboliczny w assemblerze x86.
+```
+nasm -f elf32 zad8_2.asm -o zad8_2.o
+gcc -m32 zad8_2.o -o zad8_2
 ```
