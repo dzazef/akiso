@@ -94,5 +94,5 @@ gcc -m32 zad8_2.o -o zad8_2
 ## Lista 7.
 ### Zad 1.
 Program dokonujący konwersji liczby zmiennoprzecinkowej zapisanej w postaci dziesiętnej do postaci binarnej z podaną dokładnością.
-### Zad 2.
+### Zad 6.
 Program w języku C, który asembluje program napisany dla prostego procesora MARIE, wykorzystujący tylko adresy bezpośrednie.
