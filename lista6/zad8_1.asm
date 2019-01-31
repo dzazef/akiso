@@ -15,7 +15,6 @@ main:
   push scan
   call scanf
   
-  ;nie pokazuje niepotrzebnych wartości na stosie
   finit					;moduł zmiennoprzecinkowy
   fld qword [inp]		;st(0) = x
   fldl2e				;st(1) = x | st(0) = log2(e)
